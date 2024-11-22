@@ -1,4 +1,4 @@
-FROM python:3.10-slim
+FROM python:3.11-slim
 
 MAINTAINER delameter <0.delameter@gmail.com>
 LABEL org.opencontainers.image.source=https://github.com/delameter/docker-python-texlive
@@ -23,10 +23,11 @@ RUN set -ex && \
         latexmk \
         lpr \
         make \
-        texlive-latex-recommended \
-        texlive-fonts-recommended \
-        texlive-latex-extra \
-        texlive-fonts-extra \
+        texlive-latex-recommended=2022.* \
+        texlive-fonts-recommended=2022.* \
+        texlive-latex-extra=2022.* \
+        texlive-fonts-extra=2022.* \
+        tex-gyre \
         dvipng \
         dvisvgm \
         && \
